@@ -1,6 +1,5 @@
 package com.qaguild.dbeaver.processors;
 
-import com.sun.jndi.toolkit.url.UrlUtil;
 import org.jdbi.v3.core.Jdbi;
 
 import java.lang.reflect.Method;

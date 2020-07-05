@@ -1,30 +1,18 @@
 package com.qaguild.dbeaver;
 
 
-import com.qaguild.dbeaver.QueryRunner;
-import com.qaguild.dbeaver.handlers.Handler;
-import com.qaguild.dbeaver.processors.Processor;
-import com.qaguild.dbeaver.runners.DefaultQueryRunner;
-import org.jdbi.v3.core.Jdbi;
+import com.qaguild.dbeaver.runners.Handler;
+import com.qaguild.dbeaver.runners.QueryRunner;
 
-import javax.sql.DataSource;
-import java.lang.reflect.*;
+import java.lang.reflect.Proxy;
 
 
 public class DBeaver {
 
     private final QueryRunner queryRunner;
 
-    public DBeaver(Jdbi jdbi) {
-        this(new DefaultQueryRunner(jdbi));
-    }
-
     public DBeaver(QueryRunner queryRunner) {
         this.queryRunner = queryRunner;
-    }
-
-    public void addProcessor(Processor processor) {
-        queryRunner.addProcessor(processor);
     }
 
     public <T> T init(Class<? extends T> tClass) {

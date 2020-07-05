@@ -1,6 +1,6 @@
-package com.qaguild.dbeaver.handlers;
+package com.qaguild.dbeaver.runners;
 
-import com.qaguild.dbeaver.QueryRunner;
+import com.qaguild.dbeaver.runners.QueryRunner;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
