@@ -8,7 +8,6 @@ import com.qaguild.dbeaver.test.repo.UserRepo;
 import org.jdbi.v3.core.Jdbi;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.postgresql.ds.PGSimpleDataSource;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -34,7 +33,7 @@ public class SelectTest {
                     .list();
         });
 
-        queryRunner = JDBIQueryRunner.create(jdbi);
+        queryRunner = MyRunner.create(jdbi);
     }
 
     @Test
@@ -44,5 +43,14 @@ public class SelectTest {
         User user = userRepo.findOne(0);
 
         assertThat(user.getName()).isEqualTo("Alice");
+    }
+}
+
+
+class MyRunner extends JDBIQueryRunner {
+
+    @Override
+    protected void initProcessors(Jdbi jdbi) {
+        super.initProcessors(jdbi);
     }
 }

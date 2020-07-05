@@ -9,8 +9,7 @@ import java.util.Map;
 public abstract class QueryRunner implements Runner {
     private final Map<String, Processor> processors = new HashMap<>();
 
-    @Override
-    public final void addProcessor(Processor processor) {
+    protected final void addProcessor(Processor processor) {
         processors.put(processor.getName(), processor);
     }
 

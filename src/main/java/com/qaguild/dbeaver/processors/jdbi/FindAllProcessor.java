@@ -1,10 +1,12 @@
-package com.qaguild.dbeaver.processors;
+package com.qaguild.dbeaver.processors.jdbi;
 
+import com.qaguild.dbeaver.processors.AbstractProcessor;
+import com.qaguild.dbeaver.processors.Utils;
 import org.jdbi.v3.core.Jdbi;
 
 import java.lang.reflect.Method;
 
-class FindAllProcessor extends AbstractProcessor<Jdbi> {
+public class FindAllProcessor extends AbstractProcessor<Jdbi> {
 
     public FindAllProcessor(Jdbi executor) {
         super(executor);

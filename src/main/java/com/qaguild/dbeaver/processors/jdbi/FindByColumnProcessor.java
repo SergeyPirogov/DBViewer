@@ -1,5 +1,7 @@
-package com.qaguild.dbeaver.processors;
+package com.qaguild.dbeaver.processors.jdbi;
 
+import com.qaguild.dbeaver.processors.AbstractProcessor;
+import com.qaguild.dbeaver.processors.Utils;
 import org.apache.commons.lang3.StringUtils;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.mapper.reflect.ColumnName;
@@ -8,7 +10,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-class FindByColumnProcessor extends AbstractProcessor<Jdbi> {
+public class FindByColumnProcessor extends AbstractProcessor<Jdbi> {
 
     public FindByColumnProcessor(Jdbi executor) {
         super(executor);
