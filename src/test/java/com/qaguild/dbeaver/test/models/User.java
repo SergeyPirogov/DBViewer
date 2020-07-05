@@ -1,13 +1,16 @@
 package com.qaguild.dbeaver.test.models;
 
+import com.qaguild.dbeaver.annotations.Id;
 import com.qaguild.dbeaver.annotations.TableName;
 
 import java.lang.annotation.Target;
 
 @TableName("public.\"user\"")
 public class User {
-    long id;
-    String name;
+
+    @Id
+    private long id;
+    private String name;
 
     public long getId() {
         return id;

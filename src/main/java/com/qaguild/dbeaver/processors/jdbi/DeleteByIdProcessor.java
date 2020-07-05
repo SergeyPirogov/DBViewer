@@ -6,23 +6,22 @@ import org.jdbi.v3.core.Jdbi;
 
 import java.lang.reflect.Method;
 
-public class FindOneByIdProcessor extends AbstractProcessor<Jdbi> {
+public class DeleteByIdProcessor extends AbstractProcessor<Jdbi> {
 
-    public FindOneByIdProcessor(Jdbi executor) {
+    public DeleteByIdProcessor(Jdbi executor) {
         super(executor);
     }
 
     @Override
     public String getName() {
-        return "findOne";
+        return "delete";
     }
 
     @Override
     public Object process(Method method, Class<?> clazz, Object[] args) {
         String table = Utils.getTableName(clazz);
         String fieldName = Utils.getIdFieldName(clazz);
-        String query = String.format("SELECT * FROM %s WHERE %s = ?", table, fieldName);
-        return executor.withHandle(h -> h.select(query, args[0]).mapToBean(clazz).findOne())
-                .orElse(null);
+        String query = String.format("DELETE FROM %s WHERE %s = ?", table, fieldName);
+        return executor.withHandle(h -> h.execute(query, args[0]));
     }
 }
