@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.jdbi', name: 'jdbi3-core', version: '3.14.1'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+    testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
+    testImplementation "org.testcontainers:junit-jupiter:1.14.3"
+    testCompile group: 'org.testcontainers', name: 'postgresql', version: '1.14.3'
+    testCompile group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
+    testImplementation('org.junit.jupiter:junit-jupiter:5.6.2')
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.16.1'
+}
+
+
+test {
+    useJUnitPlatform()
+}
