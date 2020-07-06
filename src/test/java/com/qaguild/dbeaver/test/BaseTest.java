@@ -4,6 +4,7 @@ import com.qaguild.dbeaver.DBeaver;
 import com.qaguild.dbeaver.runners.QueryRunner;
 import com.qaguild.dbeaver.test.models.User;
 import com.qaguild.dbeaver.test.repo.UserRepo;
+import com.qaguild.dbeaver.test.runner.MyRunner;
 import org.jdbi.v3.core.Jdbi;
 import org.junit.jupiter.api.BeforeAll;
 import org.testcontainers.containers.PostgreSQLContainer;

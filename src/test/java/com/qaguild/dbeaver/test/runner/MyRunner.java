@@ -1,4 +1,4 @@
-package com.qaguild.dbeaver.test;
+package com.qaguild.dbeaver.test.runner;
 
 import com.qaguild.dbeaver.runners.jdbi.JDBIQueryRunner;
 import org.jdbi.v3.core.Jdbi;

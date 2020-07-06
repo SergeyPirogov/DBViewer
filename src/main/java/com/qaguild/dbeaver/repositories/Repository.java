@@ -12,4 +12,6 @@ public interface Repository<S, T> {
     List<T> findAll(Order... order);
 
     void delete(S id);
+
+    Integer save(T entity);
 }

@@ -1,9 +1,6 @@
 package com.qaguild.dbeaver.runners.jdbi;
 
-import com.qaguild.dbeaver.processors.jdbi.DeleteByIdProcessor;
-import com.qaguild.dbeaver.processors.jdbi.FindAllProcessor;
-import com.qaguild.dbeaver.processors.jdbi.FindByColumnProcessor;
-import com.qaguild.dbeaver.processors.jdbi.FindOneByIdProcessor;
+import com.qaguild.dbeaver.processors.jdbi.*;
 import com.qaguild.dbeaver.runners.DefaultQueryRunner;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.spi.JdbiPlugin;
@@ -31,5 +28,6 @@ public class JDBIQueryRunner extends DefaultQueryRunner {
         addProcessor(new FindAllProcessor(jdbi));
         addProcessor(new FindByColumnProcessor(jdbi));
         addProcessor(new DeleteByIdProcessor(jdbi));
+        addProcessor(new SaveEntityProcessor(jdbi));
     }
 }

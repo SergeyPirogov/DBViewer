@@ -1,6 +1,5 @@
 package com.qaguild.dbeaver.test;
 
-import com.qaguild.dbeaver.Order;
 import com.qaguild.dbeaver.test.models.User;
 import org.junit.jupiter.api.Test;
 
