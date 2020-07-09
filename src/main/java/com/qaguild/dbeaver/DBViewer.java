@@ -15,7 +15,7 @@ public class DBViewer {
         this.queryRunner = queryRunner;
     }
 
-    public <T> T init(Class<? extends T> tClass) {
+    public <T> T create(Class<? extends T> tClass) {
         Handler handler = new Handler(tClass, queryRunner);
 
         return (T) Proxy.newProxyInstance(tClass.getClassLoader(),

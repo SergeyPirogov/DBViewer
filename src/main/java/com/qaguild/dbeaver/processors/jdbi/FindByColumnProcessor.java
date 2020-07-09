@@ -1,5 +1,6 @@
 package com.qaguild.dbeaver.processors.jdbi;
 
+import com.qaguild.dbeaver.annotations.Bind;
 import com.qaguild.dbeaver.processors.AbstractProcessor;
 import com.qaguild.dbeaver.processors.Utils;
 import org.apache.commons.lang3.StringUtils;
@@ -31,8 +32,8 @@ public class FindByColumnProcessor extends AbstractProcessor<Jdbi> {
 
         for (Annotation[] param : params) {
             for (Annotation annotation : param) {
-                if (annotation.annotationType() == ColumnName.class) {
-                    ColumnName field = (ColumnName) annotation;
+                if (annotation.annotationType() == Bind.class) {
+                    Bind field = (Bind) annotation;
                     fields.add(field.value());
                 }
             }

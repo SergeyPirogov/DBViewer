@@ -36,6 +36,6 @@ public class BaseTest {
 
         QueryRunner queryRunner = MyRunner.create(jdbi);
         DBViewer dBeaver = new DBViewer(queryRunner);
-        userRepo = dBeaver.init(UserRepo.class);
+        userRepo = dBeaver.create(UserRepo.class);
     }
 }

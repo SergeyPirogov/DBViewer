@@ -11,7 +11,7 @@ public class SaveTest extends BaseTest {
     void testCanSaveEntity() {
         User user = new User();
         user.setId(3);
-        user.setName("Kolya");
+        user.setName("Ivan");
 
         Integer value = userRepo.save(user);
 
@@ -21,4 +21,20 @@ public class SaveTest extends BaseTest {
 
         assertThat(newUser.getName()).isEqualTo(user.getName());
     }
+
+    //TODO implement update
+//    @Test
+//    void testCanUpdateEntity() {
+//        User user = new User();
+//        user.setId(3);
+//        user.setName("Kolya");
+//
+//        Integer value = userRepo.save(user);
+//
+//        assertThat(value).isEqualTo(1);
+//
+//        User newUser = userRepo.findOne(3);
+//
+//        assertThat(newUser.getName()).isEqualTo(user.getName());
+//    }
 }
