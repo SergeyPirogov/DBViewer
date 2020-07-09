@@ -1,6 +1,6 @@
 package com.qaguild.dbeaver.test;
 
-import com.qaguild.dbeaver.DBeaver;
+import com.qaguild.dbeaver.DBViewer;
 import com.qaguild.dbeaver.runners.QueryRunner;
 import com.qaguild.dbeaver.test.models.User;
 import com.qaguild.dbeaver.test.repo.UserRepo;
@@ -35,7 +35,7 @@ public class BaseTest {
         });
 
         QueryRunner queryRunner = MyRunner.create(jdbi);
-        DBeaver dBeaver = new DBeaver(queryRunner);
+        DBViewer dBeaver = new DBViewer(queryRunner);
         userRepo = dBeaver.init(UserRepo.class);
     }
 }

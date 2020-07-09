@@ -2,8 +2,8 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group 'com.qaguild'
+version '1.0.0'
 
 repositories {
     mavenCentral()
@@ -28,5 +28,23 @@ test {
         events "PASSED", "FAILED", "SKIPPED"
         showStandardStreams = true
         exceptionFormat = 'full'
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/SergeyPirogov/DBViewer")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("GH_USER")
+                password = project.findProperty("gpr.key") ?: System.getenv("GH_TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
     }
 }

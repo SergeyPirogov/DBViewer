@@ -7,11 +7,11 @@ import com.qaguild.dbeaver.runners.QueryRunner;
 import java.lang.reflect.Proxy;
 
 
-public class DBeaver {
+public class DBViewer {
 
     private final QueryRunner queryRunner;
 
-    public DBeaver(QueryRunner queryRunner) {
+    public DBViewer(QueryRunner queryRunner) {
         this.queryRunner = queryRunner;
     }
 
