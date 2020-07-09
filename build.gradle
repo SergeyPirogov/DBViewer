@@ -3,8 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-group 'com.qaguild'
-version '1.0.0'
+archivesBaseName = 'dbviewer'
 
 repositories {
     mavenCentral()
